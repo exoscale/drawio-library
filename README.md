@@ -1,6 +1,6 @@
 # The Exoscale Icon Libraries
 
-The Exoscale `draw.io` icon libraries provide three sets of icons to visualise and conceptualise various architecture and infrastructure diagrams.
+The Exoscale `draw.io` icon libraries provide three sets of icons to visualise and conceptualise various architecture and infrastructure diagrams. This library is for the tool [diagrams.net](https://app.diagrams.net/), previously draw.io, an online diagramming web site.
 
 ## exoscale
 The file `exoscale.xml` holds the library of the Exoscale icons.
@@ -20,7 +20,7 @@ The file `exoscale_ext.xml` holds the library of the External icons.
 
 
 ## Installation
-To get started, download the archive of icons from [GitHub](https://github.com/exoscale/drawio-library) and use in `draw.io` the `Open Library...` command in the `File` menu.
+To get started, download the archive of icons from [GitHub](https://github.com/exoscale/drawio-library/releases) and use in `draw.io` the `Open Library...` command in the `File` menu.
 
 <img width=100% src="./docs/open_library.png">
 
