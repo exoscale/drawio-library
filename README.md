@@ -6,38 +6,38 @@ The Exoscale `draw.io` icon libraries provide three sets of icons to visualize a
 ## Exoscale Symbol
 The file `exo-sym_v2.xml` holds the library of the Exoscale Symbol icons for product and feature.
 
-![Exoscale Symbols](./docs/exo-sym_v2.png)
+![Exoscale Symbols](./images/exo-sym_v2.png)
 
 
 ## Exoscale Component
 The file `exo-com_v2.xml` holds the library of the Exoscale Component icons.
 
-![Exoscale Components](./docs/exo-com_v2.png)
+![Exoscale Components](./images/exo-com_v2.png)
 
 
 ## Exoscale External
 The file `exo-ext_v2.xml` holds the library of the External generic icons.
 
-![Exoscale Externals](./docs/exo-ext_v2.png)
+![Exoscale Externals](./images/exo-ext_v2.png)
 
 
 
 ## Installation
 To get started, download the archive of icons from [GitHub](https://github.com/exoscale/drawio-library/releases) and use the `Open Library...` command in the `File` menu in `draw.io`.
 
-![](./docs/open_library.png)
+![](./images/open_library.png)
 
 
 ## Usage
 If you have opened all three icon libraries, you can access all icons on the right-hand side of the UI; clicking on one of the icons will place it on your drawing canvas. The initial icon sizing is so structured that usage is proportionally aligned.
 
-![](./docs/example_drawio.png)
+![](./images/example_drawio.png)
 
 
 ## Examples
 
 ### Example 1
-<img width=75% src="../docs/example_1.png">
+![](./images/example_1.png)
 
 ### Example 2
-<img width=75% src="../docs/example_2.png">
+![](./images/example_2.png)
