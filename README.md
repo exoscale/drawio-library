@@ -41,3 +41,9 @@ If you have opened all three icon libraries, you can access all icons on the rig
 
 ### Example 2
 ![](./images/example_2.png)
+
+### Example Block Storage 1
+![](./images/example-block_1.png)
+
+### Example Block Storage 2
+![](./images/example-block_2.png)
