@@ -4,19 +4,19 @@ The Exoscale `draw.io` icon libraries provide three sets of icons to visualize a
 
 
 ## Exoscale Symbol
-The file `exo-sym_v3.xml` holds the library of the Exoscale Symbol icons for product and feature.
+The file `exo-sym_v4.xml` holds the library of the Exoscale Symbol icons for product and feature.
 
 ![Exoscale Symbols](./images/exo-sym_v4.png)
 
 
 ## Exoscale Component
-The file `exo-com_v3.xml` holds the library of the Exoscale Component icons.
+The file `exo-com_v4.xml` holds the library of the Exoscale Component icons.
 
 ![Exoscale Components](./images/exo-com_v4.png)
 
 
 ## Exoscale External
-The file `exo-ext_v3.xml` holds the library of the External generic icons.
+The file `exo-ext_v4.xml` holds the library of the External generic icons.
 
 ![Exoscale Externals](./images/exo-ext_v4.png)
 
