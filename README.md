@@ -1,6 +1,6 @@
 # The Exoscale Icon Libraries
 
-The Exoscale [`drawio-library`](https://github.com/exoscale/drawio-library) repository provides four categories of icon libraries for creating clear architecture and infrastructure diagrams in `draw.io`. These libraries work with `draw.io`, available as the cross-platform __draw.io Desktop__ app ([Linux, macOS, Windows downloads](https://github.com/jgraph/drawio-desktop/releases)) or directly in your browser at [app.diagrams.net](https://app.diagrams.net).
+The Exoscale `drawio-library` repository provides four categories of icon libraries for creating clear architecture and infrastructure diagrams in `draw.io`. These libraries work with `draw.io`, available as the cross-platform __draw.io Desktop__ app ([Linux, macOS, Windows downloads](https://github.com/jgraph/drawio-desktop/releases)) or directly in your browser at [app.diagrams.net](https://app.diagrams.net).
 
 > __NOTE__  
   This [blog post](https://www.drawio.com/blog/custom-libraries) provides a detailed guide on using custom libraries in draw.io.
