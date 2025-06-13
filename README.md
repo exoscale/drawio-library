@@ -1,6 +1,6 @@
 # The Exoscale Icon Libraries
 
-The Exoscale [`drawio-library`](https://github.com/exoscale/drawio-library) repository provides four categories of icon libraries for creating clear architecture and infrastructure diagrams in `draw.io`. These libraries work with `draw.io`, available as the cross-platform __draw.io Desktop__ app ([Linux, macOS, Windows downloads](https://github.com/jgraph/drawio-desktop/releases)) or directly in your browser at [app.diagrams.net](https://app.diagrams.net).
+The Exoscale `drawio-library` repository provides four categories of icon libraries for creating clear architecture and infrastructure diagrams in `draw.io`. These libraries work with `draw.io`, available as the cross-platform __draw.io Desktop__ app ([Linux, macOS, Windows downloads](https://github.com/jgraph/drawio-desktop/releases)) or directly in your browser at [app.diagrams.net](https://app.diagrams.net).
 
 > __NOTE__  
   This [blog post](https://www.drawio.com/blog/custom-libraries) provides a detailed guide on using custom libraries in draw.io.
@@ -31,9 +31,6 @@ __`<color-code>`__:
  - `_w` ... white   
  ![](./images/exo-ico-lib_w.png)
  
-> __NOTE__    
-  You can have a look at the most up-to-date version of all the variations [here]({{< ref "/tools/icon-table" >}}).
-
 ### Exoscale Generic
 The file `exo-gen-lib.xml` holds the library of the generic icons.
 ![](./images/exo-gen-lib.png)
@@ -66,5 +63,6 @@ A general infrastructure diagram using the icons and pre-configured components.
 
 ### Block Storage Diagrams
 Technical illustrations for presentation and documentation can be easily created with the library components. 
+
 ![](./images/block-storage_1.png)
 ![](./images/block-storage_2.png)
