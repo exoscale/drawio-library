@@ -31,9 +31,6 @@ __`<color-code>`__:
  - `_w` ... white   
  ![](./images/exo-ico-lib_w.png)
  
-> __NOTE__    
-  You can have a look at the most up-to-date version of all the variations [here]({{< ref "/tools/icon-table" >}}).
-
 ### Exoscale Generic
 The file `exo-gen-lib.xml` holds the library of the generic icons.
 ![](./images/exo-gen-lib.png)
@@ -66,5 +63,6 @@ A general infrastructure diagram using the icons and pre-configured components.
 
 ### Block Storage Diagrams
 Technical illustrations for presentation and documentation can be easily created with the library components. 
+
 ![](./images/block-storage_1.png)
 ![](./images/block-storage_2.png)
