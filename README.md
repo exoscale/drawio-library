@@ -21,39 +21,39 @@ The Exoscale [`drawio-library`](https://github.com/exoscale/drawio-library) repo
    
 ### Exoscale Product
 The file `exo-ico-lib.xml` holds the library of the official product logos.
-![](exo-ico-prd.png)
+![](./images/exo-ico-lib.png)
 
 ### Exoscale Icon
 The file `exo-ico-lib_<color-code>.xml` holds the library of the product icons variation in `<color-code>` color.
 
 __`<color-code>`__:   
  - `_b` ... black 
- ![](exo-ico-b.png)
+ ![](./images/exo-ico-lib_b.png)
  - `_r` ... red
- ![](exo-ico-r.png)
+ ![](./images/exo-ico-lib_r.png)
  - `_w` ... white   
- ![](exo-ico-w.png)
+ ![](./images/exo-ico-lib_w.png)
  
 > __NOTE__    
   You can have a look at the most up-to-date version of all the variations [here]({{< ref "/tools/icon-table" >}}).
 
 ### Exoscale Generic
 The file `exo-gen-lib.xml` holds the library of the generic icons.
-![](exo-gen-lib.png)
+![](./images/exo-gen-lib.png)
 
 ### Exoscale Component
 The file `exo-cmp-lib.xml` holds the library of the component symbols.
-![](exo-cmp-lib.png)
+![](./images/exo-cmp-lib.png)
 
 
 ## Library Installation
 To get started, download the archive of icons from [GitHub](https://github.com/exoscale/drawio-library/releases) and use the `Open Library...` command in the `File` menu in `draw.io`.
-![](open-library.png)
+![](./images/open-library.png)
 
 
 ## Library Usage
 If you have opened all icon libraries, you can access all icons and components on the left-hand side of the UI; clicking on one of the icons will place it on your drawing canvas. The initial icon sizing is so structured that usage is proportionally aligned.
-![](new-diagram.png)
+![](./images/new-diagram.png)
 
 
 ## Examples
@@ -61,14 +61,14 @@ Here, you can see some usage scenarios for the libraries.
 
 ### Example
 You can use the icons freely and resize, rotate, and mirror them within draw.io diagrams; your creativity is the only limit.
-![](example.png)
+![](./images/example.png)
 
 ### Diagram
 A general infrastructure diagram using the icons and pre-configured components.
-![](diagram.png)
+![](./images/diagram.png)
 
 ### Block Storage Diagrams
 Technical illustrations for presentation and documentation can be easily created with the library components. 
-![](block-storage_1.png)
+![](./images/block-storage_1.png)
 
-![](block-storage_2.png)
+![](./images/block-storage_2.png)
