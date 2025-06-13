@@ -9,13 +9,10 @@ The Exoscale [`drawio-library`](https://github.com/exoscale/drawio-library) repo
 ## Four Library Categories
 1. __Exoscale Product__  
    Official product logos.
-
 2. __Exoscale Icon__  
    Icon variations of the official product logos in black, red, and white.
-   
 3. __Exoscale Generic__  
    General-purpose symbols—server, router, switch, and more—are ideal for larger or cross-platform diagrams.
-   
 4. __Exoscale Component__  
    Reusable diagram elements built from the official product icons.
    
@@ -70,5 +67,4 @@ A general infrastructure diagram using the icons and pre-configured components.
 ### Block Storage Diagrams
 Technical illustrations for presentation and documentation can be easily created with the library components. 
 ![](./images/block-storage_1.png)
-
 ![](./images/block-storage_2.png)
