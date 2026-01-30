@@ -7,11 +7,11 @@ The Exoscale `drawio-library` repository offers three categories of icon librari
 
 ## Library Categories
 
-1. __Exoscale Product Icon__  
+1. __Exoscale Product Icons__  
    Official product logos.
-2. __Exoscale Icon__  
+2. __Exoscale Icons__  
    Variations of official product logos (black, red, and white line styles).
-3. __Exoscale Generic__  
+3. __Exoscale Generic Icons__  
    General-purpose symbols (e.g., server, router, switch) for larger or cross-platform diagrams.
 
 ### Exoscale Product Icons
@@ -35,7 +35,6 @@ The Exoscale `drawio-library` repository offers three categories of icon librari
 - File: `exo-gen-lib.xml`  
   Contains general-purpose icons.
 
-![](./images/exo-gen-ico.png)
 
 ## Installation
 
