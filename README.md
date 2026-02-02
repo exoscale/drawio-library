@@ -50,4 +50,4 @@ Once loaded, the icons and components will appear in the left panel. Click any i
 
 ## Example
 
-![](./images/example-diagram.png)
+![](./images/example.png)
