@@ -35,7 +35,6 @@ The Exoscale `drawio-library` repository offers three categories of icon librari
 - File: `exo-gen-lib.xml`  
   Contains general-purpose icons.
 
-
 ## Installation
 
 1. Download the icon archive from [GitHub](https://github.com/exoscale/drawio-library/releases).
