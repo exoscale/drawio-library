@@ -44,7 +44,7 @@ The Exoscale `drawio-library` repository offers three categories of icon librari
 
 ## Usage
 
-Once loaded, the icons and components will appear in the left panel. Click any icon to place it on your canvas. Icons are proportionally sized for consistent diagrams.
+Once loaded, the icons will appear in the left panel. Click any icon to place it on your canvas. Icons are proportionally sized for consistent diagrams.
 
 ![](./images/new-diagram.png)
 
