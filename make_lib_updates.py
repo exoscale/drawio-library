@@ -10,6 +10,8 @@ Usage:
     python3 make_lib_updates.py --prune                  # also drop entries with no SVG
     python3 make_lib_updates.py --sizes sizes.json       # per-icon w/h overrides
     python3 make_lib_updates.py --emit-sizes sizes.json  # seed an overrides file from current lib
+    python3 make_lib_updates.py --rebuild                # regenerate all entries a-z by title
+                                                       # into exo-ico-lib_2.xml (--out to change)
 """
 import argparse
 import base64
@@ -66,8 +68,10 @@ def existing_image_uri(entry):
 def build_entry(title, svg_bytes, w, h):
     uri = "data:image/svg+xml," + base64.b64encode(svg_bytes).decode("ascii")
     xml = CELL_XML.format(uri=uri, w=w, h=h)
+    # draw.io entity-decodes the whole file before JSON.parse, so only <>& may
+    # be escaped here; quotes must stay literal (json.dumps backslash-escapes them).
     return {
-        "xml": html.escape(xml, quote=True),
+        "xml": html.escape(xml, quote=False),
         "w": w,
         "h": h,
         "title": title,
@@ -87,16 +91,28 @@ def main():
                     help="global default size, e.g. 62 or 62x44")
     ap.add_argument("--prune", action="store_true",
                     help="remove library entries that have no matching SVG")
+    ap.add_argument("--rebuild", action="store_true",
+                    help="regenerate all entries from the SVG dir, sorted a-z by title, "
+                         "writing to --out (default: <library> with '_2' before .xml)")
+    ap.add_argument("--out", type=Path, default=None,
+                    help="output file for --rebuild (default: <library>_2.xml)")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--emit-sizes", type=Path, metavar="FILE",
                     help="write current per-icon sizes to FILE and exit")
     args = ap.parse_args()
 
-    text = args.library.read_text()
+    out_path = args.out
+    if args.rebuild and out_path is None:
+        out_path = args.library.with_name(args.library.stem + "_2" + args.library.suffix)
+
+    text = args.library.read_text() if args.library.exists() else ""
     m = re.search(r"<mxlibrary>\s*(.*?)\s*</mxlibrary>", text, re.DOTALL)
-    if not m:
+    if m:
+        entries = json.loads(m.group(1))
+    elif args.rebuild:
+        entries = []  # full rebuild does not need an existing library
+    else:
         sys.exit(f"error: {args.library} has no <mxlibrary> wrapper")
-    entries = json.loads(m.group(1))
     by_title = {e.get("title"): e for e in entries}
 
     if args.emit_sizes:
@@ -128,44 +144,51 @@ def main():
         existing = by_title.get(title)
         w, h = pick_size(title, existing)
         entry = build_entry(title, path.read_bytes(), w, h)
-        if existing is None:
-            print(f"  + {title} ({w}x{h})")
+        if existing is None or args.rebuild:
+            print(f"  + {title} ({w}x{h})" if existing is None else f"  # {title} ({w}x{h})")
             regenerated[title] = entry
             added += 1
         elif (existing_image_uri(existing) == existing_image_uri(entry)
-              and (existing.get("w"), existing.get("h")) == (w, h)):
+              and (existing.get("w"), existing.get("h")) == (w, h)
+              and "&quot;" not in existing.get("xml", "")):  # fix bad escaping too
             unchanged += 1  # keep the original entry exactly as-is
         else:
             print(f"  ~ {title} ({w}x{h})")
             regenerated[title] = entry
             updated += 1
 
-    # Rebuild: existing entries keep their original position; new ones append alphabetically.
-    ordered, placed = [], set()
-    for e in entries:
-        t = e.get("title")
-        if t in svgs:
-            ordered.append(regenerated.get(t, e))
-            placed.add(t)
-        elif args.prune:
-            print(f"  - {t} (no SVG, pruned)")
-        else:
-            print(f"  ! {t} (no SVG, kept; use --prune to drop)")
-            ordered.append(e)
-    for t in sorted(set(svgs) - placed):
-        ordered.append(regenerated[t])
+    if args.rebuild:
+        # Rebuild mode: strict a-z order by title, SVGs are the only source of truth.
+        ordered = [regenerated[t] for t in sorted(svgs)]
+        print(f"\nrebuilt={len(ordered)} (from {len(entries)} existing entries)")
+    else:
+        # Rebuild: existing entries keep their original position; new ones append alphabetically.
+        ordered, placed = [], set()
+        for e in entries:
+            t = e.get("title")
+            if t in svgs:
+                ordered.append(regenerated.get(t, e))
+                placed.add(t)
+            elif args.prune:
+                print(f"  - {t} (no SVG, pruned)")
+            else:
+                print(f"  ! {t} (no SVG, kept; use --prune to drop)")
+                ordered.append(e)
+        for t in sorted(set(svgs) - placed):
+            ordered.append(regenerated[t])
 
-    missing = [e["title"] for e in entries if e.get("title") not in svgs]
-    print(f"\nadded={added} updated={updated} unchanged={unchanged} "
-          f"missing_svg={len(missing)} total={len(ordered)}")
+        missing = [e["title"] for e in entries if e.get("title") not in svgs]
+        print(f"\nadded={added} updated={updated} unchanged={unchanged} "
+              f"missing_svg={len(missing)} total={len(ordered)}")
 
     if args.dry_run:
         print("dry run: file not written")
         return
 
+    target = out_path or args.library
     out = "<mxlibrary>" + json.dumps(ordered, indent=2) + "</mxlibrary>"
-    args.library.write_text(out)
-    print(f"wrote {args.library}")
+    target.write_text(out)
+    print(f"wrote {target}")
 
 
 if __name__ == "__main__":
