@@ -1,5 +1,5 @@
 ---
-name: regenerate-libraries
+name: regen-libs
 description: Regenerate the exo-ico-lib draw.io library XML files (base plus the bk, bl, rd, wh color variants) from the SVG folders under exo_svg, using the 2-character color naming convention for folders, filenames, entry titles, and library filenames.
 ---
 
