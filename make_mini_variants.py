@@ -11,7 +11,7 @@ Pipeline (per file):
          two or more shapes share a class, so we inline it ourselves)
 
 Usage:
-    python3 make_mini-variants.py [INPUT_DIR] [-o OUT_DIR] [--dry-run] [--no-svgo]
+    python3 make_mini_variants.py [INPUT_DIR] [-o OUT_DIR] [--dry-run] [--no-svgo]
 
 INPUT_DIR defaults to the new-icons/ staging folder.
 By default files are rewritten in place and the results are also copied

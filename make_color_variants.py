@@ -21,7 +21,7 @@ Usage:
     python3 make_color_variants.py [INPUT_DIR] [--dry-run] [--force]
 
 INPUT_DIR defaults to the new-icons/ staging folder and must contain SVGs
-already minimized by make_mini-variants.py (inline style="fill:#hex" only).
+already minimized by make_mini_variants.py (inline style="fill:#hex" only).
 The color variant folders (svg_bk, ...) are expected under the exo_svg/
 library root (override with --svg-root DIR).
 """
@@ -119,7 +119,7 @@ def main() -> None:
         styles = STYLE_RE.findall(xml)
         if not styles:
             print(f"{path.name}: SKIPPED (no inline fill styles; run "
-                  f"make_mini-variants.py first)", file=sys.stderr)
+                  f"make_mini_variants.py first)", file=sys.stderr)
             continue
         reds = [s for s in styles if s.strip().rstrip(";") in RED]
         if len(reds) > 1:
