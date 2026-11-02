@@ -105,14 +105,19 @@ def main():
     if args.rebuild and out_path is None:
         out_path = args.library.with_name(args.library.stem + "_2" + args.library.suffix)
 
-    text = args.library.read_text() if args.library.exists() else ""
+    # Compare drift against the file that will be replaced if it exists, else
+    # the base --library (covers --rebuild --out to a variant, and --rebuild
+    # without --out, whose default target is <library>_2.xml).
+    target = out_path or args.library
+    existing_path = target if target.exists() else args.library
+    text = existing_path.read_text() if existing_path.exists() else ""
     m = re.search(r"<mxlibrary>\s*(.*?)\s*</mxlibrary>", text, re.DOTALL)
     if m:
         entries = json.loads(m.group(1))
     elif args.rebuild:
         entries = []  # full rebuild does not need an existing library
     else:
-        sys.exit(f"error: {args.library} has no <mxlibrary> wrapper")
+        sys.exit(f"error: {existing_path} has no <mxlibrary> wrapper")
     by_title = {e.get("title"): e for e in entries}
 
     if args.emit_sizes:
@@ -185,7 +190,6 @@ def main():
         print("dry run: file not written")
         return
 
-    target = out_path or args.library
     out = "<mxlibrary>" + json.dumps(ordered, indent=2) + "</mxlibrary>"
     target.write_text(out)
     print(f"wrote {target}")
