@@ -1,6 +1,6 @@
 ---
 name: image-update
-description: Ingest newly added SVG icons from new-icons/ into the drawio icon library by a 3-step pipeline: minimize the SVGs (make_mini_variants.py), generate the four color variants (make_color_variants.py), and render the PNG variants into exo_png/ (make_png_variants.py), ending with a one-line status report.
+description: Ingest newly added SVG icons from new-icons/ into the drawio icon library with a 3-step pipeline — minimizing the SVGs (make_mini_variants.py), generating the four color variants (make_color_variants.py), and rendering the PNG variants into exo_png/ (make_png_variants.py) — ending with a one-line status report.
 ---
 
 # Image Update Pipeline
